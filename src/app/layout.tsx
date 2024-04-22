@@ -5,11 +5,15 @@ import { Providers } from './providers';
 import HomeBtns from './_components/Nav/HomeNav';
 import { Menu, MenuItem } from './_components/Nav/Nav-Menu/navbar-menu';
 import NavbarFull from '@/app/_components/Nav/Whole-Nav';
+import AuroraBackground from './_components/ui/aurora-background';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: "Brian Galyen's Portfolio",
   description: 'Generated using Nextjs.',
+  icons: {
+    icon: '/logo/icon.ico',
+  },
 };
 
 export default function RootLayout({
@@ -20,13 +24,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <header>
-          <NavbarFull />
-        </header>
-        <Providers>{children}</Providers>
-        <div className="flex justify-center items-end">
-          <HomeBtns />
-        </div>
+        <AuroraBackground>
+          <Providers>{children}</Providers>
+          <div className="flex justify-center items-end">
+            <HomeBtns />
+          </div>
+        </AuroraBackground>{' '}
+        {/* <NavbarFull /> */}
       </body>
     </html>
   );

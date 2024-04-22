@@ -1,15 +1,5 @@
-import {
-  Divider,
-  Card,
-  CardBody,
-  CardHeader,
-  CardFooter,
-  Avatar,
-  Button,
-  // Image,
-} from '@nextui-org/react';
 import Image from 'next/image';
-
+import AuroraBackground from './_components/ui/aurora-background';
 export default function Home() {
   return (
     <main className="flex flex-col items-center justify-center h-screen">
