@@ -7,12 +7,12 @@ import {
   ProductItem,
 } from '../Nav-Menu/navbar-menu';
 import { cn } from '@/app/_lib/utils/cn';
-import projectList from '../../../../../public/projects/project-list';
+import projectList from '@/app/_lib/data/project-list';
 
 export default function NavbarFull() {
   return (
     <div className="flex items-center justify-center">
-      <Navbar className="" />
+      <Navbar className="bottom-1" />
     </div>
   );
 }

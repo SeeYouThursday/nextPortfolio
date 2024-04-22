@@ -12,7 +12,7 @@ import Image from 'next/image';
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-center md:h-screen">
+    <main className="flex flex-col items-center justify-center h-screen">
       <p className="sm:text-3xl md:text-6xl lg:text-9xl text-center m-2 mb-1">
         Brian Galyen
       </p>
