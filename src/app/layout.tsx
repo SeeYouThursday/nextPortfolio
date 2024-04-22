@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: "Brian Galyen's Portfolio",
   description: 'Generated using Nextjs.',
   icons: {
-    icon: '/logo/icon.ico',
+    icon: '/favicon_io/icon.png',
   },
 };
 

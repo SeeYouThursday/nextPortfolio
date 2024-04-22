@@ -1,5 +1,4 @@
 'use client';
-
 import {
   Spacer,
   Card,
@@ -10,7 +9,10 @@ import {
   ButtonGroup,
   Link,
 } from '@nextui-org/react';
+import ComingSoon from '../ComingSoon/';
+// 
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faLayerGroup } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from 'next/image';
 
@@ -56,16 +58,27 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
                   icon={faGithub}
                   size="sm"
                   style={{ color: '#FFD43B' }}
-                  bounce
                 />
               }
               size="sm"
             >
               Repo
             </Button>
-            <Button color="secondary" size="sm">
-              Stack
-            </Button>
+            <ComingSoon>
+              <Button
+                color="secondary"
+                size="sm"
+                endContent={
+                  <FontAwesomeIcon
+                    icon={faLayerGroup}
+                    size="sm"
+                    style={{ color: '#FFD43B' }}
+                  />
+                }
+              >
+                Stack
+              </Button>
+            </ComingSoon>
             <Button
               as={Link}
               target="_blank"
