@@ -4,6 +4,8 @@ import {
   CardBody,
   CardHeader,
   CardFooter,
+  Avatar,
+  Button,
   // Image,
 } from '@nextui-org/react';
 import Image from 'next/image';
@@ -11,8 +13,8 @@ import Image from 'next/image';
 export default function Home() {
   return (
     <main className="flex flex-col items-center justify-center md:h-screen">
-      <p className="sm:text-sm md:text-6xl lg:text-9xl text-center m-2 mb-1">
-        About the Developer
+      <p className="sm:text-3xl md:text-6xl lg:text-9xl text-center m-2 mb-1">
+        Brian Galyen
       </p>
       <div className="m-4">
         <hr></hr>
