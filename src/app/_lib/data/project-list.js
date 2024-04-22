@@ -51,6 +51,18 @@ const projectList = [
     icon: '/logo/',
     underConstruction: false,
   },
+  {
+    id: 5,
+    title: 'Fight My Dad',
+    shortTitle: 'FMD',
+    github: 'https://github.com/SeeYouThursday/Fight-My-Dad',
+    href: 'https://not-your-moms-tech-blog-5e4e2d95a074.herokuapp.com/',
+    description: "Don't hold in those thoughts, let them out here!",
+    shortDescrip: "Don't hold in those thoughts, let them out here!",
+    src: '/projects/tech-blog.png',
+    icon: '/logo/',
+    underConstruction: false,
+  },
 ];
 
 export default projectList;
