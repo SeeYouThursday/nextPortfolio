@@ -38,7 +38,7 @@ const HomeBtns = () => {
     },
     {
       name: 'Resume',
-      href: '/resume',
+      href: '/document-resume',
       icon: faFile,
       ariaLabel: 'Resume/Skills Page',
     },
