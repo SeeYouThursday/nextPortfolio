@@ -1,5 +1,3 @@
-'use client';
-
 import Skills from '../_components/SkillsCard';
 import DownloadBtn from '../_components/Btns/DownloadBtn';
 import ResumeLinkBtn from '../_components/Btns/ResumeLinkBtn';
@@ -25,7 +23,7 @@ const Resume = () => {
       <Skills skills={proficencies} />
       <div className="flex justify-between mt-4">
         <DownloadBtn />
-        <ResumeLinkBtn />
+        {/* <ResumeLinkBtn /> */}
       </div>
     </div>
   );
