@@ -75,8 +75,6 @@ const HomeBtns = () => {
         isIconOnly={true}
         aria-label={contactBtn.ariaLabel}
         variant="ghost"
-        as={Link}
-        href="/contact"
         className="m-1 hover:scale-110"
         color="primary"
         onPress={onOpen}
@@ -98,9 +96,6 @@ const HomeBtns = () => {
                   <ModalFooter>
                     <Button color="danger" variant="light" onPress={onClose}>
                       Close
-                    </Button>
-                    <Button color="primary" onPress={onClose}>
-                      Action
                     </Button>
                   </ModalFooter>
                 </>
