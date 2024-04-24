@@ -31,7 +31,7 @@ interface Project {
 const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
   return (
     <>
-      <Card className="flex flex-col flex-wrap justify-center items-center m-3 sm:m-20 xs:m-50 md:max-w-[300px]">
+      <Card className="flex flex-col flex-wrap justify-center items-center m-3 xs:m-50 md:m-10 md:w-[500px]">
         <CardHeader className="flex justify-center text-balance font-bold h-16 flex-grow sm:text-center">
           <div>{project.title}</div>
         </CardHeader>
