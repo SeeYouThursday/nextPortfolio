@@ -17,6 +17,7 @@ import {
   faAddressBook,
   faPaintBrush,
   faCube,
+  faFile,
 } from '@fortawesome/free-solid-svg-icons';
 
 const HomeBtns = () => {
@@ -38,7 +39,7 @@ const HomeBtns = () => {
     {
       name: 'Resume',
       href: '/resume',
-      icon: faCube,
+      icon: faFile,
       ariaLabel: 'Resume/Skills Page',
     },
   ];
