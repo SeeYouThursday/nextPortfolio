@@ -1,4 +1,4 @@
-import Skills from '../_components/SkillsCard';
+import SkillsCard from '../_components/SkillsCard';
 import DownloadBtn from '../_components/Btns/DownloadBtn';
 import ResumeLinkBtn from '../_components/Btns/ResumeLinkBtn';
 
@@ -20,10 +20,10 @@ const Resume = () => {
   return (
     <div className="m-auto">
       <h3 className="text-4xl">Proficiencies:</h3>
-      <Skills skills={proficencies} />
+      <SkillsCard skills={proficencies} />
       <div className="flex justify-between mt-4">
         <DownloadBtn />
-        {/* <ResumeLinkBtn /> */}
+        <ResumeLinkBtn />
       </div>
     </div>
   );

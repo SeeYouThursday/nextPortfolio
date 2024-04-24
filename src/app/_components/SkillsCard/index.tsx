@@ -2,7 +2,7 @@
 
 import { Card, CardBody, CardHeader, CardFooter } from '@nextui-org/react';
 
-const Skills = ({ skills }: { skills: string[] }) => {
+const SkillsCard = ({ skills }: { skills: string[] }) => {
   return (
     <>
       <Card>
@@ -18,4 +18,4 @@ const Skills = ({ skills }: { skills: string[] }) => {
   );
 };
 
-export default Skills;
+export default SkillsCard;
