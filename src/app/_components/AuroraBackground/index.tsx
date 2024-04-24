@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import React from 'react';
 import AuroraBackground from '../ui/aurora-background';
 
-export function Aurora({ children }: { children: React.ReactNode }) {
+export default function Aurora({ children }: { children: React.ReactNode }) {
   return (
     <AuroraBackground>
       <motion.div
@@ -13,7 +13,7 @@ export function Aurora({ children }: { children: React.ReactNode }) {
         transition={{
           delay: 0.3,
           duration: 0.8,
-          ease: 'easeInOut',
+          ease: 'easeIn',
         }}
         className="relative flex flex-col gap-4 items-center justify-center px-4"
       >

@@ -1,3 +1,17 @@
+export const currentProject = {
+  id: 0,
+  title: 'GitFitNotFat',
+  shortTitle: 'GitFit',
+  github: 'https://github.com/SeeYouThursday/GitFitNotFat',
+  href: 'https://seeyouthursday.github.io/GitFitNotFat/',
+  description:
+    'Pick a recipe then give calories, then user inputs the activity they want to do to burn off those calories. The app then returns the duration of that activity needed to burn off the calories from the food selected in addition to the calories burned for that activity. We learned how to avoid conflicts with merges while working with other collaborators in an agile work enviroment. Also, some APIs do not update their documents, and trial and error takes over.',
+  shortDescrip: 'Cook great meals, while burning off those calories!',
+  src: '/projects/GitFitNotFat.png',
+  icon: '/logo/GitFitLogoProto.png',
+  underConstruction: false,
+};
+
 const projectList = [
   {
     id: 1,

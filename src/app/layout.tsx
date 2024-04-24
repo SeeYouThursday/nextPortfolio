@@ -3,9 +3,8 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import { Providers } from './providers';
 import HomeBtns from './_components/Nav/HomeNav';
-import { Menu, MenuItem } from './_components/Nav/Nav-Menu/navbar-menu';
-import NavbarFull from '@/app/_components/Nav/Whole-Nav';
-import AuroraBackground from './_components/ui/aurora-background';
+// import { Menu, MenuItem } from './_components/Nav/Nav-Menu/navbar-menu';
+// import NavbarFull from '@/app/_components/Nav/Whole-Nav';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -24,12 +23,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <AuroraBackground>
+        <div className="flex justify-center">
+          <HomeBtns />
           <Providers>{children}</Providers>
-          <div className="flex justify-center items-end">
-            <HomeBtns />
-          </div>
-        </AuroraBackground>{' '}
+        </div>
         {/* <NavbarFull /> */}
       </body>
     </html>

@@ -1,5 +1,15 @@
 'use client';
-import { Avatar, Button, Link } from '@nextui-org/react';
+import {
+  Modal,
+  ModalContent,
+  ModalFooter,
+  useDisclosure,
+  Avatar,
+  Button,
+} from '@nextui-org/react';
+import ContactForm from '@/app/_components/ContactForm';
+import { Suspense } from 'react';
+import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library, IconProp } from '@fortawesome/fontawesome-svg-core';
 import {
@@ -8,7 +18,10 @@ import {
   faPaintBrush,
   faCube,
 } from '@fortawesome/free-solid-svg-icons';
+
 const HomeBtns = () => {
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
+
   const btns = [
     {
       name: 'home',
@@ -23,15 +36,22 @@ const HomeBtns = () => {
       ariaLabel: 'Projects Page',
     },
     {
-      name: 'contact',
-      href: '/contact',
-      icon: faAddressBook,
-      ariaLabel: 'Contact Me',
+      name: 'Resume',
+      href: '/resume',
+      icon: faCube,
+      ariaLabel: 'Resume/Skills Page',
     },
   ];
 
+  const contactBtn = {
+    name: 'contact',
+    href: '/contact',
+    icon: faAddressBook,
+    ariaLabel: 'Contact Me',
+  };
+
   return (
-    <>
+    <div className="flex flex-col me-9 mt-11">
       {btns.map((btn) => {
         return (
           <Button
@@ -49,7 +69,46 @@ const HomeBtns = () => {
           </Button>
         );
       })}
-    </>
+      <Button
+        radius="full"
+        isIconOnly={true}
+        aria-label={contactBtn.ariaLabel}
+        variant="ghost"
+        as={Link}
+        href="/contact"
+        className="m-1 hover:scale-110"
+        color="primary"
+        onPress={onOpen}
+      >
+        <FontAwesomeIcon icon={contactBtn.icon} />
+      </Button>{' '}
+      <Suspense fallback={<div>loading...</div>}>
+        <Modal
+          isOpen={isOpen}
+          onOpenChange={onOpenChange}
+          placement="top-center"
+        >
+          {/* Add your modal content here */}
+          <ModalContent>
+            {(onClose) => {
+              return (
+                <>
+                  <ContactForm />
+                  <ModalFooter>
+                    <Button color="danger" variant="light" onPress={onClose}>
+                      Close
+                    </Button>
+                    <Button color="primary" onPress={onClose}>
+                      Action
+                    </Button>
+                  </ModalFooter>
+                </>
+              );
+            }}
+          </ModalContent>
+        </Modal>
+      </Suspense>
+    </div>
   );
 };
 

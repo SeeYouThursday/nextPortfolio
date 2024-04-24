@@ -63,7 +63,7 @@ const ContactForm = () => {
   const form = useRef();
 
   return (
-    <Card className="max-w-[400px] p-8">
+    <Card className="w-full p-8">
       <CardHeader className="text-center w-full">Reach Out!</CardHeader>
       <form
         onSubmit={sendEmail}
