@@ -31,7 +31,7 @@ interface Project {
 const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
   return (
     <>
-      <Card className="flex flex-col flex-wrap justify-center items-center m-3 xs:m-50 md:m-10 md:w-[500px]">
+      <Card className="flex flex-col flex-wrap justify-center items-center m-3 xs:m-50 md:m-10">
         <CardHeader className="flex justify-center text-balance font-bold h-16 flex-grow sm:text-center">
           <div>{project.title}</div>
         </CardHeader>
@@ -39,6 +39,7 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
           src={project.src}
           height={150}
           width={200}
+          quality={100}
           alt={`${project.title} image`}
           className="rounded-sm border-4 border-violet-400 flex-grow"
         />
@@ -89,9 +90,11 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
               endContent={
                 <Image
                   src={project.icon}
-                  width={5}
-                  height={5}
+                  width={25}
+                  height={25}
                   alt={project.title}
+                  className="rounded-lg"
+                  quality={100}
                 />
               }
               size="sm"

@@ -1,20 +1,59 @@
-export const currentProject = {
-  id: 0,
-  title: 'GitFitNotFat',
-  shortTitle: 'GitFit',
-  github: 'https://github.com/SeeYouThursday/GitFitNotFat',
-  href: 'https://seeyouthursday.github.io/GitFitNotFat/',
-  description:
-    'Pick a recipe then give calories, then user inputs the activity they want to do to burn off those calories. The app then returns the duration of that activity needed to burn off the calories from the food selected in addition to the calories burned for that activity. We learned how to avoid conflicts with merges while working with other collaborators in an agile work enviroment. Also, some APIs do not update their documents, and trial and error takes over.',
-  shortDescrip: 'Cook great meals, while burning off those calories!',
-  src: '/projects/GitFitNotFat.png',
-  icon: '/logo/GitFitLogoProto.png',
-  underConstruction: false,
-};
+export const currentProjects = [
+  {
+    id: 0,
+    title: 'NextWeather',
+    shortTitle: 'NW',
+    github: 'https://github.com/SeeYouThursday/nextWeather',
+    href: 'https://next-weather-lac.vercel.app/',
+    description:
+      'The Weather App allows users to get the current weather information for a specific location. It utilizes the OpenWeather API to fetch weather data and Material-Tailwind for the user interface.',
+    shortDescrip: 'Check the weather before grabbing that jacket!',
+    src: '/logo/weather-next.png',
+    icon: '/logo/weather-next.png',
+    underConstruction: true,
+  },
+  {
+    id: 1,
+    title: 'iBall24/7',
+    shortTitle: 'iBall',
+    github: 'https://github.com/',
+    href: '',
+    description: 'Ecommerce - Basketball Training Program Merch Site',
+    shortDescrip: 'Ecommerce - Basketball Training Program Merch Site',
+    src: '',
+    icon: '',
+    underConstruction: true,
+  },
+];
 
 const projectList = [
   {
+    id: 0,
+    title: 'NextWeather',
+    shortTitle: 'NW',
+    github: 'https://github.com/SeeYouThursday/next-weather',
+    href: 'https://next-weather-lac.vercel.app/',
+    description:
+      'The Weather App allows users to get the current weather information for a specific location. It utilizes the OpenWeather API to fetch weather data and Material-Tailwind for the user interface.',
+    shortDescrip: 'Check the weather before grabbing that jacket!',
+    src: '/projects/next-weather.png',
+    icon: '/logo/nw-logo.svg',
+    underConstruction: true,
+  },
+  {
     id: 1,
+    title: 'iBall24/7',
+    shortTitle: 'iBall',
+    github: 'https://github.com/',
+    href: '',
+    description: 'Ecommerce - Basketball Training Program Merch Site',
+    shortDescrip: 'Ecommerce - Basketball Training Program Merch Site',
+    src: '',
+    icon: '',
+    underConstruction: true,
+  },
+  {
+    id: 10,
     title: 'GitFitNotFat',
     shortTitle: 'GitFit',
     github: 'https://github.com/SeeYouThursday/GitFitNotFat',
@@ -27,7 +66,7 @@ const projectList = [
     underConstruction: false,
   },
   {
-    id: 2,
+    id: 12,
     title: 'Choose Your Own Adventure',
     shortTitle: 'CYOA',
     github: 'https://github.com/SeeYouThursday/Choose-Your-Own-Adventure',
@@ -41,19 +80,19 @@ const projectList = [
     underConstruction: false,
   },
   {
-    id: 3,
+    id: 13,
     title: 'Fight My Dad',
     shortTitle: 'FMD',
     github: 'https://github.com/SeeYouThursday/Fight-My-Dad',
     href: 'https://not-your-moms-tech-blog-5e4e2d95a074.herokuapp.com/',
     description: "Don't hold in those thoughts, let them out here!",
-    shortDescrip: "Don't hold in those thoughts, let them out here!",
+    shortDescrip: "My dad can beat up your dad! Let's find out!",
     src: '/projects/fmd.svg',
     icon: '/logo/',
     underConstruction: false,
   },
   {
-    id: 4,
+    id: 14,
     title: 'Weather This',
     shortTitle: 'WT',
     github: 'https://github.com/SeeYouThursday/Weather-This',
@@ -66,7 +105,7 @@ const projectList = [
     underConstruction: true,
   },
   {
-    id: 5,
+    id: 15,
     title: "Not Your Mom's Tech Blog",
     shortTitle: 'Blog',
     github: 'https://github.com/SeeYouThursday/Not-Your-Moms-Tech-Blog',

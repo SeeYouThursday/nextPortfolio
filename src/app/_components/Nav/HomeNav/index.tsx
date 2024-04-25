@@ -11,7 +11,6 @@ import ContactForm from '@/app/_components/ContactForm';
 import { Suspense } from 'react';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { library, IconProp } from '@fortawesome/fontawesome-svg-core';
 import {
   faHouse,
   faAddressBook,
