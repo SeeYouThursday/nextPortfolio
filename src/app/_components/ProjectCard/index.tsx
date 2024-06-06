@@ -26,14 +26,20 @@ interface Project {
   description: string;
   shortDescrip: string;
   icon: string;
+  underConstruction: boolean;
 }
 
 const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
   return (
     <>
       <Card className="flex flex-col flex-wrap justify-center items-center m-3 xs:m-50 md:m-10">
-        <CardHeader className="flex justify-center text-balance font-bold h-16 flex-grow sm:text-center">
-          <div>{project.title}</div>
+        <CardHeader className="flex flex-col justify-center text-balance font-bold h-16 flex-grow sm:text-center">
+          <h3 className="text-xl ">{project.title}</h3>
+          {project.underConstruction ? (
+            <h4 className="text-sm italic text-secondary">In Progress</h4>
+          ) : (
+            ''
+          )}
         </CardHeader>
         <Image
           src={project.src}
@@ -90,10 +96,10 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
               endContent={
                 <Image
                   src={project.icon}
-                  width={25}
-                  height={25}
+                  width={12}
+                  height={12}
                   alt={project.title}
-                  className="rounded-lg"
+                  className="rounded-sm"
                   quality={100}
                 />
               }
