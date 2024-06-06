@@ -51,7 +51,7 @@ const HomeBtns = () => {
   };
 
   return (
-    <div className="flex flex-col me-9 mt-11">
+    <nav className="flex flex-col me-9 ms-3 mt-11 fixed">
       {btns.map((btn) => {
         return (
           <Button
@@ -103,7 +103,7 @@ const HomeBtns = () => {
           </ModalContent>
         </Modal>
       </Suspense>
-    </div>
+    </nav>
   );
 };
 
