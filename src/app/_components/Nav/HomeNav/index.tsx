@@ -6,6 +6,7 @@ import {
   useDisclosure,
   Avatar,
   Button,
+  Tooltip,
 } from '@nextui-org/react';
 import ContactForm from '@/app/_components/ContactForm';
 import { Suspense } from 'react';
@@ -24,7 +25,7 @@ const HomeBtns = () => {
 
   const btns = [
     {
-      name: 'home',
+      name: 'Home',
       href: '/',
       icon: faHouse,
       ariaLabel: 'Home Page',
@@ -54,32 +55,35 @@ const HomeBtns = () => {
     <nav className="flex flex-col me-9 ms-3 mt-11 fixed">
       {btns.map((btn) => {
         return (
-          <Button
-            key={btn.name}
-            radius="full"
-            isIconOnly={true}
-            aria-label={btn.ariaLabel}
-            variant="ghost"
-            as={Link}
-            href={btn.href}
-            className="m-1 hover:scale-110"
-            color="primary"
-          >
-            <FontAwesomeIcon icon={btn.icon} />
-          </Button>
+          <Tooltip key={btn.name} content={btn.name} placement="right-end">
+            <Button
+              radius="full"
+              isIconOnly={true}
+              aria-label={btn.ariaLabel}
+              variant="ghost"
+              as={Link}
+              href={btn.href}
+              className="m-1 hover:scale-110"
+              color="primary"
+            >
+              <FontAwesomeIcon icon={btn.icon} />
+            </Button>
+          </Tooltip>
         );
       })}
-      <Button
-        radius="full"
-        isIconOnly={true}
-        aria-label={contactBtn.ariaLabel}
-        variant="ghost"
-        className="m-1 hover:scale-110"
-        color="primary"
-        onPress={onOpen}
-      >
-        <FontAwesomeIcon icon={contactBtn.icon} />
-      </Button>{' '}
+      <Tooltip content="Contact Me" placement="right-end">
+        <Button
+          radius="full"
+          isIconOnly={true}
+          aria-label={contactBtn.ariaLabel}
+          variant="ghost"
+          className="m-1 hover:scale-110"
+          color="primary"
+          onPress={onOpen}
+        >
+          <FontAwesomeIcon icon={contactBtn.icon} />
+        </Button>
+      </Tooltip>
       <Suspense fallback={<div>loading...</div>}>
         <Modal
           isOpen={isOpen}
