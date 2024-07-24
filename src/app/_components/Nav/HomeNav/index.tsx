@@ -4,7 +4,6 @@ import {
   ModalContent,
   ModalFooter,
   useDisclosure,
-  Avatar,
   Button,
   Tooltip,
 } from '@nextui-org/react';
@@ -15,12 +14,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faHouse,
   faAddressBook,
-  faPaintBrush,
   faCube,
   faFile,
 } from '@fortawesome/free-solid-svg-icons';
 
-const HomeBtns = () => {
+const HomeBtns = ({ location }: { location: string }) => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   const btns = [
@@ -52,45 +50,64 @@ const HomeBtns = () => {
   };
 
   return (
-    <nav className="flex flex-col me-9 ms-3 mt-11 fixed">
+    <nav
+      className={
+        location === 'under'
+          ? 'md:hidden flex mt-11 justify-center'
+          : 'flex flex-col me-9 ms-3 mt-11 fixed'
+      }
+    >
       {btns.map((btn) => {
         return (
-          <Tooltip key={btn.name} content={btn.name} placement="right-end">
-            <Button
-              radius="full"
-              isIconOnly={true}
-              aria-label={btn.ariaLabel}
-              variant="ghost"
-              as={Link}
-              href={btn.href}
-              className="m-1 hover:scale-110"
-              color="primary"
+          <div key={btn.name} className="flex justify-start items-center">
+            <Tooltip
+              content={btn.name}
+              placement={location === 'under' ? 'bottom' : 'right-end'}
             >
-              <FontAwesomeIcon icon={btn.icon} />
-            </Button>
-          </Tooltip>
+              <Button
+                radius="full"
+                isIconOnly={true}
+                aria-label={btn.ariaLabel}
+                variant="ghost"
+                as={Link}
+                href={btn.href}
+                className="m-1 hover:scale-110"
+                color="primary"
+              >
+                <FontAwesomeIcon icon={btn.icon} />
+              </Button>
+            </Tooltip>
+            <p className="hidden md:flex ms-1 text-sm">{btn.name}</p>
+          </div>
         );
       })}
-      <Tooltip content="Contact Me" placement="right-end">
-        <Button
-          radius="full"
-          isIconOnly={true}
-          aria-label={contactBtn.ariaLabel}
-          variant="ghost"
-          className="m-1 hover:scale-110"
-          color="primary"
-          onPress={onOpen}
+      <div className="flex justify-start items-center">
+        <Tooltip
+          content="Contact Me"
+          placement={location === 'under' ? 'bottom' : 'right-end'}
         >
-          <FontAwesomeIcon icon={contactBtn.icon} />
-        </Button>
-      </Tooltip>
+          <Button
+            radius="full"
+            isIconOnly={true}
+            aria-label={contactBtn.ariaLabel}
+            variant="ghost"
+            className="m-1 hover:scale-110"
+            color="primary"
+            onPress={onOpen}
+          >
+            <FontAwesomeIcon icon={contactBtn.icon} />
+          </Button>
+        </Tooltip>
+        <h3 className="hidden md:flex ms-1 text-sm text-balance w-10 text-center">
+          Contact Me
+        </h3>
+      </div>
       <Suspense fallback={<div>loading...</div>}>
         <Modal
           isOpen={isOpen}
           onOpenChange={onOpenChange}
           placement="top-center"
         >
-          {/* Add your modal content here */}
           <ModalContent>
             {(onClose) => {
               return (
@@ -112,3 +129,13 @@ const HomeBtns = () => {
 };
 
 export default HomeBtns;
+
+const BtnTooltip = ({ name }: { name: string }) => {
+  return (
+    <Tooltip content={name} placement="bottom-end">
+      <Button radius="full" isIconOnly={true} variant="ghost" color="primary">
+        {name}
+      </Button>
+    </Tooltip>
+  );
+};

@@ -1,14 +1,15 @@
 import Image from 'next/image';
 import { Motto, MottoSubTitle } from './_components/Motto';
 import Aurora from './_components/AuroraBackground';
+import HomeBtns from './_components/Nav/HomeNav';
 
 export default function Home() {
   return (
     <Aurora>
       <main className="flex flex-col items-center justify-center h-[90svh]">
-        <p className="sm:text-3xl md:text-6xl lg:text-9xl text-center m-2 mb-1">
+        <h1 className="md:text-9xl text-5xl font-semibold md:font-normal text-center m-2 mb-1">
           Brian Galyen
-        </p>
+        </h1>
         <div className="m-4">
           <hr></hr>
           {/* //?? Consider Typewriter Effect Below */}
@@ -24,6 +25,9 @@ export default function Home() {
           alt="Brian walking down the road"
         />
         <MottoSubTitle /> */}
+        </div>
+        <div>
+          <HomeBtns location="under" />
         </div>
       </main>
     </Aurora>
