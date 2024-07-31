@@ -31,17 +31,17 @@ export const currentProjects = [
 const projectList = [
   {
     id: 0,
-    title: 'NextWeather',
-    shortTitle: 'NW',
-    github: 'https://github.com/SeeYouThursday/next-weather',
+    title: 'SeeYouThursday Web Dev Design',
+    shortTitle: 'SYT',
+    github: 'https://github.com/SeeYouThursday/SeeYouThursdayInc',
     href: 'https://next-weather-lac.vercel.app/',
     description:
-      'The Weather App allows users to get the current weather information for a specific location. It utilizes the OpenWeather API to fetch weather data and Material-Tailwind for the user interface.',
-    shortDescrip: 'Check the weather before grabbing that jacket!',
+      'Delivering excellent Full Stack Web Development from design to development to dreams come true!',
+    shortDescrip: 'Web Dev Design Site',
     src: '/projects/next-weather.png',
     icon: '/logo/nw-logo.svg',
     underConstruction: true,
-    stack: ['Coming Soon!'],
+    stack: ['Nextjs', 'React', 'Vercel Postgres', 'TailwindCSS'],
   },
   {
     id: 1,
@@ -54,7 +54,22 @@ const projectList = [
     src: '/projects/iball247.png',
     icon: '/logo/iball-logo.svg',
     underConstruction: true,
-    stack: ['Coming Soon!'],
+    stack: ['Nextjs', 'React', 'Shopify CMS'],
+  },
+
+  {
+    id: 2,
+    title: 'NextWeather',
+    shortTitle: 'NW',
+    github: 'https://github.com/SeeYouThursday/next-weather',
+    href: 'https://next-weather-lac.vercel.app/',
+    description:
+      'The Weather App allows users to get the current weather information for a specific location. It utilizes the OpenWeather API to fetch weather data and Material-Tailwind for the user interface.',
+    shortDescrip: 'Check the weather before grabbing that jacket!',
+    src: '/projects/next-weather.png',
+    icon: '/logo/nw-logo.svg',
+    underConstruction: true,
+    stack: ['Nextjs', 'React', 'Vercel Postgres', 'TailwindCSS'],
   },
   {
     id: 10,
