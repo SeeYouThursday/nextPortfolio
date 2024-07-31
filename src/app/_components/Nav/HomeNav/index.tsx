@@ -18,7 +18,7 @@ import {
   faFile,
 } from '@fortawesome/free-solid-svg-icons';
 
-const HomeBtns = ({ location }: { location: string }) => {
+const HomeBtns = ({ location }: { location?: string }) => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   const btns = [
