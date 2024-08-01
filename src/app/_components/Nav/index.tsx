@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { Suspense } from 'react';
 import {
   Navbar,
   NavbarBrand,
@@ -10,8 +10,13 @@ import {
   NavbarMenuItem,
   Link,
   Button,
+  Modal,
+  ModalFooter,
+  ModalContent,
+  useDisclosure,
 } from '@nextui-org/react';
 import { usePathname } from 'next/navigation';
+import ContactForm from '@/app/_components/ContactForm';
 
 interface navItem {
   href: string;
@@ -22,6 +27,7 @@ interface navItem {
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   //   const [isActive, setIsActive] = React.useState(false);
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   const navItems: navItem[] = [
     { href: '/', title: 'Home', isActive: false },
@@ -62,6 +68,45 @@ export default function App() {
             </NavbarItem>
           );
         })}
+        <NavbarItem>
+          <Button
+            radius="full"
+            aria-label="Contact Me"
+            // variant="ghost"
+            className="m-1 hover:scale-110"
+            color="primary"
+            onPress={onOpen}
+          >
+            {/* <FontAwesomeIcon icon={contactBtn.icon} /> */}
+            Contact Me
+          </Button>
+          <Suspense fallback={<div>loading...</div>}>
+            <Modal
+              isOpen={isOpen}
+              onOpenChange={onOpenChange}
+              placement="top-center"
+            >
+              <ModalContent>
+                {(onClose) => {
+                  return (
+                    <>
+                      <ContactForm />
+                      <ModalFooter>
+                        <Button
+                          color="danger"
+                          variant="light"
+                          onPress={onClose}
+                        >
+                          Close
+                        </Button>
+                      </ModalFooter>
+                    </>
+                  );
+                }}
+              </ModalContent>
+            </Modal>
+          </Suspense>
+        </NavbarItem>
       </NavbarContent>
       <NavbarMenu>
         {navItems.map((item, index) => (
