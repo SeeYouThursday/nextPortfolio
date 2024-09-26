@@ -10,7 +10,7 @@ import {
   Link,
 } from '@nextui-org/react';
 import ComingSoon from '../ComingSoon/';
-//
+import { CardDemo } from '@/app/_components/AceCard';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faLayerGroup } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -27,6 +27,8 @@ interface Project {
   shortDescrip: string;
   icon: string;
   underConstruction: boolean;
+  stack?: string[];
+  business?: boolean;
 }
 
 const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
@@ -51,10 +53,12 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
         />
         <CardBody className="text-xs overflow-visible flex-grow text-center">
           {project.shortDescrip}
+          {/* {project.stack && project.stack.length > 0 ? (
+            <CardDemo stack={project.stack} />
+          ) : null} */}
         </CardBody>
         <CardFooter className="flex justify-center flex-grow">
           <ButtonGroup>
-            {' '}
             <Button
               as={Link}
               target="_blank"
@@ -68,12 +72,14 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
                 />
               }
               size="sm"
+              className="max-w-24"
               // variant="light"
               // radius="full"
             >
               Repo
             </Button>
-            <ComingSoon>
+            {/* Stack Logic */}
+            <ComingSoon stack={project.stack ?? []}>
               <Button
                 color="secondary"
                 size="sm"
@@ -84,6 +90,7 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
                     style={{ color: '#FFD43B' }}
                   />
                 }
+                className="max-w-24"
               >
                 Stack
               </Button>
@@ -95,7 +102,11 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
               color="primary"
               endContent={
                 <Image
-                  src={project.icon}
+                  src={
+                    project.icon
+                      ? project.icon
+                      : '/favicon_io/favicon-16x16.png'
+                  }
                   width={12}
                   height={12}
                   alt={project.title}
@@ -104,6 +115,7 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
                 />
               }
               size="sm"
+              className="max-w-24"
             >
               {project.shortTitle}
             </Button>

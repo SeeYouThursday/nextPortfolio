@@ -10,7 +10,6 @@ const Portfolio = () => {
       <div className="ms-36 me-36 mt-4">
         <hr></hr>
       </div>
-
       <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 auto-rows-auto mt-3">
         {projectList.map((project) => (
           <ProjectCard key={project.id} project={project} />
