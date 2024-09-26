@@ -1,5 +1,9 @@
 const ProductForm = () => {
-  return <></>;
+  return (
+    <>
+      <p>Placeholder</p>
+    </>
+  );
 };
 
 export default ProductForm;
